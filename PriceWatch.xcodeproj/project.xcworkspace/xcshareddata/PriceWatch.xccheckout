@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>49C6136A-9B4A-43F3-A64B-DB9053533F73</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PriceWatch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CBFE7D6099CF2C168A9555881F048DA8681A2BEF</key>
+		<string>https://github.com/dvprasath/PriceWatch_ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PriceWatch.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CBFE7D6099CF2C168A9555881F048DA8681A2BEF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dvprasath/PriceWatch_ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CBFE7D6099CF2C168A9555881F048DA8681A2BEF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CBFE7D6099CF2C168A9555881F048DA8681A2BEF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PriceWatch</string>
+		</dict>
+	</array>
+</dict>
+</plist>

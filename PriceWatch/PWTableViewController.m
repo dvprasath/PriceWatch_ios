@@ -9,9 +9,14 @@
 #import "PWTableViewController.h"
 #import "PWProductsDataStore.h"
 #import "PWProduct.h"
+#import "PWSearchRequest.h"
 
 @interface PWTableViewController ()
+
 @property PWProductsDataStore *productDataStore;
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSMutableArray *products;
+@property NSMutableData *receivedData;
 
 @end
 
@@ -34,8 +39,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSArray *products = [PWProductsDataStore getRandomproducts];
-    return products.count;
+    return _products.count;
 }
 
 
@@ -45,8 +49,7 @@
     // Get a new or recycled cell
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                              forIndexPath:indexPath];
-    NSArray *products = [PWProductsDataStore getRandomproducts];
-    PWProduct *product = products[indexPath.row];
+    PWProduct *product = _products[indexPath.row];
     cell.textLabel.text = product.name;
     return cell;
 }
@@ -111,5 +114,101 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void) searchForProducts
+{
+    NSMutableURLRequest * request = [self createHttpRequest];
+    
+    NSURLConnection *con = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (con)
+    {
+      self.receivedData=[NSMutableData data];
+    }
+    else
+    {
+        //something bad happened
+    }
+}
+
+
+- (NSMutableURLRequest *) createHttpRequest
+{
+    NSString *queryString = [NSString stringWithFormat:@"http://162.243.137.136:8080/PriceWatchWeb/products/search"];
+    
+    NSMutableURLRequest *request=[NSMutableURLRequest
+                                  requestWithURL:[NSURL URLWithString:
+                                                  queryString]
+                                  cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                  timeoutInterval:60.0];
+    
+    PWSearchRequest *pwSearchRequest = [[PWSearchRequest alloc] init];
+    pwSearchRequest.productTitle = @"Dead";
+    pwSearchRequest.hostName = @"futureshop";
+    pwSearchRequest.sortOrder = @"Relevance";
+    pwSearchRequest.category = @"All";
+    pwSearchRequest.dateFilter = @"Year";
+    pwSearchRequest.pageNumber = 1;
+    
+    NSMutableDictionary *dict = [NSMutableDictionary  dictionaryWithObjectsAndKeys:
+                                 pwSearchRequest.productTitle, @"productTitle",
+                                 pwSearchRequest.hostName, @"hostName",
+                                 pwSearchRequest.sortOrder, @"sortOrder",
+                                 pwSearchRequest.category, @"category",
+                                 pwSearchRequest.dateFilter, @"dateFilter",
+                                 [NSNumber numberWithInteger: pwSearchRequest.pageNumber], @"pageNumber",
+                                 nil];
+    
+    NSError *error;
+    NSData *requestBody = [NSJSONSerialization dataWithJSONObject:dict options:0 error: &error];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:requestBody];
+    return request;
+    
+}
+#pragma mark NSURLConnection Delegate Methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    self.receivedData = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.receivedData appendData:data];
+}
+
+- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
+                  willCacheResponse:(NSCachedURLResponse*)cachedResponse
+{
+    return nil;
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    //NSLog(@"Response String %@", [[NSString alloc]initWithData:self.receivedData encoding:NSUTF8StringEncoding]);
+    NSDictionary *jsonDictionary =
+        [NSJSONSerialization JSONObjectWithData:self.receivedData options:0 error:nil];
+    
+    _products = [[NSMutableArray alloc] init];
+    // Get an array of dictionaries with the key "locations"
+    NSArray *array = [jsonDictionary objectForKey:@"products"];
+    
+    for(NSDictionary *dict in array)
+    {
+        PWProduct *product = [[PWProduct alloc] initWithJSONDictionary:dict];
+        [_products addObject:product];
+    }
+    [self.tableView reloadData];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+
+}
+
 
 @end

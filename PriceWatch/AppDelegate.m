@@ -21,6 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     PWTableViewController *pwTableViewController = [[PWTableViewController alloc] init];
     
+    [pwTableViewController searchForProducts];
+    
     self.window.rootViewController = pwTableViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

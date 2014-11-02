@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PWTableViewController : UITableViewController
-
+- (void) searchForProducts;
 @end

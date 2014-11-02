@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C36C0E331A06B0740049F3A3 /* PWSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C36C0E321A06B0740049F3A3 /* PWSearchRequest.m */; };
 		C3E2A0091A045F4200D83C91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2A0081A045F4200D83C91 /* main.m */; };
 		C3E2A00C1A045F4200D83C91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2A00B1A045F4200D83C91 /* AppDelegate.m */; };
 		C3E2A0141A045F4200D83C91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E2A0131A045F4200D83C91 /* Images.xcassets */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C36C0E311A06A62C0049F3A3 /* PWSearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PWSearchRequest.h; sourceTree = "<group>"; };
+		C36C0E321A06B0740049F3A3 /* PWSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWSearchRequest.m; sourceTree = "<group>"; };
 		C3E2A0031A045F4200D83C91 /* PriceWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E2A0071A045F4200D83C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E2A0081A045F4200D83C91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C36C0E301A06A6150049F3A3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C36C0E311A06A62C0049F3A3 /* PWSearchRequest.h */,
+				C36C0E321A06B0740049F3A3 /* PWSearchRequest.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		C3E29FFA1A045F4200D83C91 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +97,8 @@
 		C3E2A0051A045F4200D83C91 /* PriceWatch */ = {
 			isa = PBXGroup;
 			children = (
-				C3E2A0341A04666F00D83C91 /* Views */,
+				C36C0E301A06A6150049F3A3 /* API */,
+				C3E2A0341A04666F00D83C91 /* ViewControllers */,
 				C3E2A0311A04640C00D83C91 /* Models */,
 				C3E2A00A1A045F4200D83C91 /* AppDelegate.h */,
 				C3E2A00B1A045F4200D83C91 /* AppDelegate.m */,
@@ -133,13 +146,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		C3E2A0341A04666F00D83C91 /* Views */ = {
+		C3E2A0341A04666F00D83C91 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C3E2A02C1A04603D00D83C91 /* PWTableViewController.h */,
 				C3E2A02D1A04603D00D83C91 /* PWTableViewController.m */,
 			);
-			name = Views;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +258,7 @@
 				C3E2A02F1A04603D00D83C91 /* PWTableViewController.m in Sources */,
 				C3E2A03B1A04671900D83C91 /* PWProduct.m in Sources */,
 				C3E2A0091A045F4200D83C91 /* main.m in Sources */,
+				C36C0E331A06B0740049F3A3 /* PWSearchRequest.m in Sources */,
 				C3E2A03D1A04695700D83C91 /* PWProductsDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,4 +15,13 @@
 
 
 @implementation PWProduct : NSObject
+
+- (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary {
+    if(self = [self init]) {
+        // Assign all properties with keyed values from the dictionary
+        self.name = [jsonDictionary objectForKey:@"productTitle"];
+    }
+    
+    return self;
+}
 @end

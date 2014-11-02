@@ -11,4 +11,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *price;
 
+- (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;
+
 @end
