@@ -52,7 +52,7 @@
         for (int i=0 ; i < 20; i++)
         {
             PWProduct *product = [[PWProduct alloc] init];
-            product.name =  [ NSString stringWithFormat:@"Product _ %d", i];
+            product.title =  [ NSString stringWithFormat:@"Product _ %d", i];
             randomProducts[i] = product;
         }
     }

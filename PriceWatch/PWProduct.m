@@ -19,7 +19,10 @@
 - (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary {
     if(self = [self init]) {
         // Assign all properties with keyed values from the dictionary
-        self.name = [jsonDictionary objectForKey:@"productTitle"];
+        self.title = [jsonDictionary objectForKey:@"productTitle"];
+        self.currentPrice = [jsonDictionary objectForKey:@"currentPrice"];
+        self.hostName = [jsonDictionary objectForKey:@"hostName"];
+        self.imageUrl = [jsonDictionary objectForKey:@"imageLink"];
     }
     
     return self;

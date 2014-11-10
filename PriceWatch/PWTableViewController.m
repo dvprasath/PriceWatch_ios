@@ -10,6 +10,7 @@
 #import "PWProductsDataStore.h"
 #import "PWProduct.h"
 #import "PWSearchRequest.h"
+#import "ProductDetailsViewController.h"
 
 @interface PWTableViewController ()
 
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+    [self.navigationItem setTitle:@"Products"]; 
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,7 +52,7 @@
     UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                                              forIndexPath:indexPath];
     PWProduct *product = _products[indexPath.row];
-    cell.textLabel.text = product.name;
+    cell.textLabel.text = product.title;
     return cell;
 }
 
@@ -203,6 +205,14 @@
         [_products addObject:product];
     }
     [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PWProduct *product = _products[indexPath.row];
+    
+    ProductDetailsViewController *detailsViewController = [[ProductDetailsViewController alloc] initWithPWProduct:product];
+    [self.navigationController pushViewController:detailsViewController animated:YES];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

@@ -8,8 +8,11 @@
 
 @interface PWProduct : NSObject
 
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *price;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSNumber *currentPrice;
+@property (strong, nonatomic) NSString *hostName;
+@property (strong, nonatomic) NSString *imageUrl;
+
 
 - (id)initWithJSONDictionary:(NSDictionary *)jsonDictionary;
 

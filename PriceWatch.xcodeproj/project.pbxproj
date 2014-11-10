@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C36C0E331A06B0740049F3A3 /* PWSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C36C0E321A06B0740049F3A3 /* PWSearchRequest.m */; };
+		C3CAA38A1A10288500A438DB /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3CAA3881A10288500A438DB /* ProductDetailsViewController.m */; };
+		C3CAA38B1A10288500A438DB /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3CAA3891A10288500A438DB /* ProductDetailsViewController.xib */; };
 		C3E2A0091A045F4200D83C91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2A0081A045F4200D83C91 /* main.m */; };
 		C3E2A00C1A045F4200D83C91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2A00B1A045F4200D83C91 /* AppDelegate.m */; };
 		C3E2A0141A045F4200D83C91 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3E2A0131A045F4200D83C91 /* Images.xcassets */; };
@@ -31,6 +33,9 @@
 /* Begin PBXFileReference section */
 		C36C0E311A06A62C0049F3A3 /* PWSearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PWSearchRequest.h; sourceTree = "<group>"; };
 		C36C0E321A06B0740049F3A3 /* PWSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWSearchRequest.m; sourceTree = "<group>"; };
+		C3CAA3871A10288500A438DB /* ProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
+		C3CAA3881A10288500A438DB /* ProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
+		C3CAA3891A10288500A438DB /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		C3E2A0031A045F4200D83C91 /* PriceWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PriceWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E2A0071A045F4200D83C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E2A0081A045F4200D83C91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -151,6 +156,9 @@
 			children = (
 				C3E2A02C1A04603D00D83C91 /* PWTableViewController.h */,
 				C3E2A02D1A04603D00D83C91 /* PWTableViewController.m */,
+				C3CAA3871A10288500A438DB /* ProductDetailsViewController.h */,
+				C3CAA3881A10288500A438DB /* ProductDetailsViewController.m */,
+				C3CAA3891A10288500A438DB /* ProductDetailsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E2A0171A045F4200D83C91 /* LaunchScreen.xib in Resources */,
+				C3CAA38B1A10288500A438DB /* ProductDetailsViewController.xib in Resources */,
 				C3E2A0141A045F4200D83C91 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +267,7 @@
 				C3E2A02F1A04603D00D83C91 /* PWTableViewController.m in Sources */,
 				C3E2A03B1A04671900D83C91 /* PWProduct.m in Sources */,
 				C3E2A0091A045F4200D83C91 /* main.m in Sources */,
+				C3CAA38A1A10288500A438DB /* ProductDetailsViewController.m in Sources */,
 				C36C0E331A06B0740049F3A3 /* PWSearchRequest.m in Sources */,
 				C3E2A03D1A04695700D83C91 /* PWProductsDataStore.m in Sources */,
 			);

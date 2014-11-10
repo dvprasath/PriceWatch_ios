@@ -23,7 +23,9 @@
     
     [pwTableViewController searchForProducts];
     
-    self.window.rootViewController = pwTableViewController;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:pwTableViewController];
+    
+    self.window.rootViewController = navController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
